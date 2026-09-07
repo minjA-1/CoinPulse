@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoTracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo-wrap">
+          <span class="logo-icon">₿</span>
+          <div>
+            <h1 class="logo">CryptoTracker</h1>
+            <p class="tagline">Live cryptocurrency prices</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="refresh-info">
+            <span class="refresh-dot"></span>
+            <span id="last-updated">Updating...</span>
+          </div>
+          <button class="btn-refresh" id="btn-refresh" title="Refresh all">↺</button>
+        </div>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="search-wrap">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search crypto (e.g. bitcoin, ethereum...)"
+            autocomplete="off"
+          />
+          <button class="btn-add" id="btn-add">Track</button>
+        </div>
+        <div id="status" class="status hidden"></div>
+      </div>
+    </header>
+
+    <!-- MARKET OVERVIEW -->
+    <section class="market-bar" id="market-bar">
+      <div class="market-inner">
+        <div class="market-item">
+          <span class="market-label">BTC Dominance</span>
+          <span class="market-value" id="btc-dominance">—</span>
+        </div>
+        <div class="market-item">
+          <span class="market-label">Total Market Cap</span>
+          <span class="market-value" id="total-mcap">—</span>
+        </div>
+        <div class="market-item">
+          <span class="market-label">24h Volume</span>
+          <span class="market-value" id="total-volume">—</span>
+        </div>
+        <div class="market-item">
+          <span class="market-label">Active Cryptos</span>
+          <span class="market-value" id="active-cryptos">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN -->
+    <main class="main">
+      <div id="coins-grid" class="coins-grid"></div>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">📈</div>
+        <h2>Track your crypto</h2>
+        <p>Search for a cryptocurrency above to start tracking</p>
+        <div class="quick-add">
+          <p class="quick-label">Quick add:</p>
+          <div class="quick-btns">
+            <button class="btn-quick" data-coin="bitcoin">Bitcoin</button>
+            <button class="btn-quick" data-coin="ethereum">Ethereum</button>
+            <button class="btn-quick" data-coin="solana">Solana</button>
+            <button class="btn-quick" data-coin="cardano">Cardano</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
